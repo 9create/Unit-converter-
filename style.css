@@ -1,0 +1,135 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* To stack header, converter, and footer */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures it takes full viewport height */
+    margin: 0;
+    background-color: #f4f7f6; /* Light background color */
+    color: #333;
+}
+
+/* Container for the main converter app content */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    margin: 20px auto; /* Center with auto margin */
+    flex-grow: 1; /* Allows container to grow and push footer down */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically within container */
+}
+
+/* Heading Styling */
+h1 {
+    color: #007bff; /* A nice blue color */
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+/* Converter Section Styling */
+.converter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between input groups */
+    margin-bottom: 30px;
+}
+
+/* Input Group Styling (for input value/unit and output value/unit) */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px; /* Space between label, input, and select */
+}
+
+.input-group label {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95em;
+}
+
+/* Input and Select Field Styling */
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-sizing: border-box; /* Include padding in width */
+    color: #333;
+    -webkit-appearance: none; /* Remove default browser styling for select */
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+}
+
+select {
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2C197.8%20c5.3-5.3%2C5.3-13.8%2C0-19.1l-102.3-102.3c-5.3-5.3-13.8-5.3-19.1%2C0c-5.3%2C5.3-5.3%2C13.8%2C0%2C19.1l92.8%2C92.8c5.3%2C5.3%2C13.8%2C5.3%2C19.1%2C0L287%2C197.8z%22%2F%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M19.1%2C197.8%20c-5.3-5.3-5.3-13.8%2C0-19.1l102.3-102.3c5.3-5.3%2C13.8-5.3%2C19.1%2C0c5.3%2C5.3%2C5.3%2C13.8%2C0%2C19.1l-92.8%2C92.8c-5.3%2C5.3-13.8%2C5.3-19.1%2C0L19.1%2C197.8z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 15px center;
+    background-size: 10px;
+}
+
+/* Convert Button Styling */
+button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Center the button in its column */
+    width: 50%; /* Make button take up half width */
+    max-width: 200px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 0.9em;
+    width: 100%; /* Ensure footer spans full width */
+    box-sizing: border-box; /* Include padding in width */
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+/* Hide footer when printing */
+@media print {
+    footer {
+        display: none !important;
+    }
+    /* You might need to adjust other print styles for the main content if using this */
+    /* For example, if you want the converter to take full page on print */
+    body {
+        justify-content: flex-start; /* Align content to top */
+        align-items: flex-start;
+        min-height: auto;
+    }
+    .container {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        width: 100%;
+        border-radius: 0;
+    }
+}
